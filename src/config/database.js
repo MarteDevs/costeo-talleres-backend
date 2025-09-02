@@ -6,10 +6,11 @@ dotenv.config();
 
 // Configurar el pool de conexiones usando las variables de entorno
 const pool = createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT,
+    host: process.env.MYSQLHOST, // Usa el nombre de la variable de Railway
+    user: process.env.MYSQLUSER,
+    password: process.env.MYSQLPASSWORD,
+    database: process.env.MYSQLDATABASE,
+    port: process.env.MYSQLPORT,
     database: process.env.DB_NAME,
     waitForConnections: true,
     connectionLimit: 10,
